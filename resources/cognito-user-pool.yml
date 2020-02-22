@@ -9,7 +9,13 @@ Resources:
         - email
       AutoVerifiedAttributes:
         - email
-
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireLowercase: false
+          RequireNumbers: true
+          RequireSymbols: false
+          RequireUppercase: false
   CognitoUserPoolClient:
     Type: AWS::Cognito::UserPoolClient
     Properties:

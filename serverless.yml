@@ -20,7 +20,7 @@ provider:
   name: aws
   runtime: nodejs10.x
   stage: dev
-  region: us-east-1
+  region: us-west-2
 
   # These environment variables are made available to our functions
   # under process.env.
@@ -125,8 +125,9 @@ resources:
   - ${file(resources/api-gateway-errors.yml)}
   # DynamoDB
   - ${file(resources/dynamodb-table.yml)}
-  # S3
-  - ${file(resources/s3-bucket.yml)}
+  # # S3
+  # - ${file(resources/s3-bucket.yml)}
   # Cognito
   - ${file(resources/cognito-user-pool.yml)}
   - ${file(resources/cognito-identity-pool.yml)}
+  - ${file(/resources/cognito-identity-providers.yml)}
